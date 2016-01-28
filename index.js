@@ -13,6 +13,7 @@ class Geocoder extends Component {
     }),
     focusLatlng: PropTypes.any,
     onChange: PropTypes.func,
+    rateLimit: PropTypes.number,
     value: PropTypes.string
   };
 
@@ -48,7 +49,7 @@ class Geocoder extends Component {
     const loadOptions = throttle(input => {
       return search(apiKey, input, {
         boundary,
-        focus_latlng: focusLatlng
+        focusLatlng
       }).then(geojson => {
         const options = geojson && geojson.features
           ? geojson.features.map(featureToOption)
