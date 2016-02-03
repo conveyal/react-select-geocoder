@@ -1,6 +1,6 @@
 {
   "name": "react-select-geocoder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Geocoder that uses react-select.",
   "main": "./build/index",
   "babel": {
@@ -41,7 +41,7 @@
     "envify": "^3.4.0"
   },
   "dependencies": {
-    "isomorphic-mapzen-search": "0.0.1",
+    "isomorphic-mapzen-search": "^0.0.2",
     "react-select": "^1.0.0-beta8",
     "throttleit": "^1.0.0"
   },
