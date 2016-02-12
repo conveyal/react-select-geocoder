@@ -6,15 +6,11 @@ import throttle from 'throttleit'
 class Geocoder extends Component {
   static propTypes = {
     apiKey: PropTypes.string.isRequired,
-    boundary: PropTypes.shape({
-      country: PropTypes.string,
-      minLatlng: PropTypes.any,
-      maxLatlng: PropTypes.any
-    }),
+    boundary: PropTypes.object,
     focusLatlng: PropTypes.any,
     onChange: PropTypes.func,
     rateLimit: PropTypes.number,
-    value: PropTypes.string
+    value: PropTypes.object
   };
 
   options = {};
@@ -31,12 +27,12 @@ class Geocoder extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (!eqOpts(nextProps.value, this.props.value)) {
-      this.setState({ value: nextProps.value })
+      this.setState({value: nextProps.value})
     }
   }
 
   onChange (value) {
-    this.setState({ value })
+    this.setState({value})
     this.props.onChange && this.props.onChange(value && this.options[value.value])
   }
 
