@@ -1,4 +1,8 @@
 
+### 0.0.5 — 2016-02-22
+
+* Utilize `react-pure-render` instead of a custom diff function.
+
 ### 0.0.4 — 2016-02-12
 
 * Set `value` propType to `object`.
