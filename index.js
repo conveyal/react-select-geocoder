@@ -1,9 +1,10 @@
 import {search} from 'isomorphic-mapzen-search'
-import React, {Component, PropTypes} from 'react'
+import React, {PropTypes} from 'react'
+import {PureComponent, shallowEqual} from 'react-pure-render'
 import Select from 'react-select'
 import throttle from 'throttleit'
 
-class Geocoder extends Component {
+class Geocoder extends PureComponent {
   static propTypes = {
     apiKey: PropTypes.string.isRequired,
     boundary: PropTypes.object,
@@ -26,7 +27,7 @@ class Geocoder extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (!eqOpts(nextProps.value, this.props.value)) {
+    if (!shallowEqual(nextProps.value, this.props.value)) {
       this.setState({value: nextProps.value})
     }
   }
@@ -34,10 +35,6 @@ class Geocoder extends Component {
   onChange (value) {
     this.setState({value})
     this.props.onChange && this.props.onChange(value && this.options[value.value])
-  }
-
-  shouldComponentUpdate (nextProps, nextState) {
-    return !eqOpts(nextState.value, this.state.value)
   }
 
   render () {
@@ -68,10 +65,6 @@ class Geocoder extends Component {
         />
     )
   }
-}
-
-function eqOpts (o1, o2) {
-  return o1 === o2 || (o1 && o2 && o1.value === o2.value && o1.label === o2.label)
 }
 
 function featureToOption (feature) {

@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "isomorphic-mapzen-search": "^0.0.2",
+    "react-pure-render": "^1.0.2",
     "react-select": "^1.0.0-beta8",
     "throttleit": "^1.0.0"
   },
