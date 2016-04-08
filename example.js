@@ -9,7 +9,17 @@ document.body.appendChild(div)
 render(
   <Geocoder
     apiKey={process.env.MAPZEN_KEY}
-    onChange={value => console.log(value)}
+    featureToLabel={({properties}) => {
+      let {label, localadmin, locality} = properties
+      if (localadmin && locality) {
+        if (locality === 'Indianapolis city (balance)') {
+          locality = 'Indianapolis'
+        }
+        return label.replace(localadmin, locality)
+      }
+      return label
+    }}
+    onChange={(value) => console.log(value)}
     />,
   div
 )

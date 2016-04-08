@@ -8,20 +8,27 @@ class Geocoder extends PureComponent {
   static propTypes = {
     apiKey: PropTypes.string.isRequired,
     boundary: PropTypes.object,
+    featureToLabel: PropTypes.func,
+    featureToValue: PropTypes.func,
     focusLatlng: PropTypes.any,
     onChange: PropTypes.func,
     rateLimit: PropTypes.number,
     value: PropTypes.object
-  };
+  }
 
-  options = {};
+  static defaultProps = {
+    featureToLabel: (feature) => feature.properties.label,
+    featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`
+  }
+
+  options = {}
 
   state = {
     value: this.props.value || null
-  };
+  }
 
   cacheOptions (options) {
-    options.forEach(o => {
+    options.forEach((o) => {
       this.options[o.value] = o.feature
     })
   }
@@ -38,12 +45,19 @@ class Geocoder extends PureComponent {
   }
 
   render () {
-    const {apiKey, boundary, focusLatlng, rateLimit} = this.props
-    const loadOptions = throttle(input => {
+    const {apiKey, boundary, featureToLabel, featureToValue, focusLatlng, rateLimit} = this.props
+    const featureToOption = (feature) => {
+      return {
+        feature,
+        label: featureToLabel(feature),
+        value: featureToValue(feature)
+      }
+    }
+    const loadOptions = throttle((input) => {
       return search(apiKey, input, {
         boundary,
         focusLatlng
-      }).then(geojson => {
+      }).then((geojson) => {
         const options = geojson && geojson.features
           ? geojson.features.map(featureToOption)
           : []
@@ -51,7 +65,6 @@ class Geocoder extends PureComponent {
         return {options}
       })
     }, rateLimit || 500)
-
     return (
       <Select.Async
         autoload={false}
@@ -60,18 +73,10 @@ class Geocoder extends PureComponent {
         loadOptions={loadOptions}
         minimumInput={3}
         {...this.props}
-        onChange={value => this.onChange(value)}
+        onChange={(value) => this.onChange(value)}
         value={this.state.value}
         />
     )
-  }
-}
-
-function featureToOption (feature) {
-  return {
-    feature,
-    label: feature.properties.label,
-    value: feature.geometry.coordinates.join(',')
   }
 }
 
