@@ -1,4 +1,4 @@
-import {search} from 'isomorphic-mapzen-search'
+import {mapzenSearch} from 'isomorphic-mapzen-search'
 import React, {PropTypes} from 'react'
 import {PureComponent, shallowEqual} from 'react-pure-render'
 import Select from 'react-select'
@@ -13,12 +13,14 @@ class Geocoder extends PureComponent {
     focusLatlng: PropTypes.any,
     onChange: PropTypes.func,
     rateLimit: PropTypes.number,
+    search: PropTypes.func,
     value: PropTypes.object
   }
 
   static defaultProps = {
     featureToLabel: (feature) => feature.properties.label,
-    featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`
+    featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`,
+    search: mapzenSearch
   }
 
   options = {}
@@ -45,7 +47,7 @@ class Geocoder extends PureComponent {
   }
 
   render () {
-    const {apiKey, boundary, featureToLabel, featureToValue, focusLatlng, rateLimit} = this.props
+    const {apiKey, boundary, featureToLabel, featureToValue, focusLatlng, rateLimit, search} = this.props
     const featureToOption = (feature) => {
       return {
         feature,

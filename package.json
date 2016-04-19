@@ -1,6 +1,6 @@
 {
   "name": "react-select-geocoder",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Geocoder that uses react-select.",
   "main": "./build/index",
   "babel": {

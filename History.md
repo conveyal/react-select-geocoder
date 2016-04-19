@@ -1,4 +1,8 @@
 
+### 0.0.7 — 2016-04-19
+
+* Allow overriding of the search function.
+
 ### 0.0.5 — 2016-02-22
 
 * Utilize `react-pure-render` instead of a custom diff function.
