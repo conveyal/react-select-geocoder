@@ -1,6 +1,5 @@
 {
   "name": "react-select-geocoder",
-  "version": "0.0.7",
   "description": "Geocoder that uses react-select.",
   "main": "./build/index",
   "babel": {
@@ -13,7 +12,8 @@
   "scripts": {
     "prepublish": "babel index.js --out-dir build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo example.js --css node_modules/react-select/dist/react-select.min.css --live -- -t babelify -t envify"
+    "start": "budo example.js --css node_modules/react-select/dist/react-select.min.css --live -- -t babelify -t envify",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,8 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "budo": "^8.0.2",
-    "envify": "^3.4.0"
+    "envify": "^3.4.0",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
     "isomorphic-mapzen-search": "^0.0.2",
