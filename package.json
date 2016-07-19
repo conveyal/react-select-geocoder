@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prepublish": "babel index.js --out-dir build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mastarm lint",
     "start": "budo example.js --css node_modules/react-select/dist/react-select.min.css --live -- -t babelify -t envify",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -40,6 +40,7 @@
     "browserify": "^13.0.1",
     "budo": "^8.3.0",
     "envify": "^3.4.1",
+    "mastarm": "^0.6.3",
     "semantic-release": "^4.3.5"
   },
   "dependencies": {
