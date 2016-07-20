@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/conveyal/react-select-geocoder",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
+    "babel-cli": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
@@ -46,7 +46,7 @@
   "dependencies": {
     "isomorphic-mapzen-search": "^0.0.4",
     "react-pure-render": "^1.0.2",
-    "react-select": "1.0.0-beta8",
+    "react-select": "^1.0.0-beta14",
     "throttleit": "^1.0.0"
   },
   "peerDependencies": {
