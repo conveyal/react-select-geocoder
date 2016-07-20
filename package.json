@@ -12,7 +12,7 @@
   "scripts": {
     "prepublish": "babel index.js --out-dir build",
     "test": "mastarm lint",
-    "start": "budo example.js --css node_modules/react-select/dist/react-select.min.css --live -- -t babelify -t envify",
+    "start": "mastarm build --serve example.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -36,10 +36,6 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "budo": "^8.3.0",
-    "envify": "^3.4.1",
     "mastarm": "^0.6.3",
     "semantic-release": "^4.3.5"
   },
@@ -50,8 +46,8 @@
     "throttleit": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
   },
   "standard": {
     "parser": "babel-eslint"
