@@ -20,7 +20,7 @@ render(
 )
 ```
 
-[npm-image]: https://img.shields.io/npm/v/react-select-geocoder.svg?maxAge=2592000?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/react-select-geocoder.svg?maxAge=2592000&style=flat-square
 [npm-url]: https://www.npmjs.com/package/react-select-geocoder
 [travis-image]: https://img.shields.io/travis/conveyal/react-select-geocoder.svg?style=flat-square
 [travis-url]: https://travis-ci.org/conveyal/react-select-geocoder
