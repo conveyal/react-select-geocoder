@@ -15,19 +15,21 @@ class Geocoder extends PureComponent {
     rateLimit: PropTypes.number,
     search: PropTypes.func,
     value: PropTypes.object
-  };
+  }
 
   static defaultProps = {
     featureToLabel: (feature) => feature.properties.label,
     featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`,
     search: mapzenSearch
-  };
+  }
 
-  options = {};
+  options = {}
 
   state = {
     value: this.props.value || null
-  };
+  }
+
+  _throttledLoadOptions = throttle(this.loadOptions, this.props.rateLimit || 500)
 
   cacheOptions (options) {
     options.forEach((o) => {
@@ -39,6 +41,10 @@ class Geocoder extends PureComponent {
     if (!shallowEqual(nextProps.value, this.props.value)) {
       this.setState({value: nextProps.value})
     }
+
+    if (this.props.rateLimit !== nextProps.rateLimit) {
+      this._throttledLoadOptions = throttle(this.loadOptions, this.props.rateLimit || 500)
+    }
   }
 
   featureToOption = (feature) => {
@@ -48,7 +54,11 @@ class Geocoder extends PureComponent {
       label: featureToLabel(feature),
       value: featureToValue(feature)
     }
-  };
+  }
+
+  focus () {
+    this.select.focus()
+  }
 
   loadOptions = (input) => {
     const {apiKey, focusLatlng, boundary, search} = this.props
@@ -62,16 +72,16 @@ class Geocoder extends PureComponent {
       this.cacheOptions(options)
       return {options}
     })
-  };
+  }
 
-  throttleLoadOptions = (loadOptions) => {
-    return throttle(loadOptions, this.props.rateLimit || 500)
-  };
-
-  onChange = (value) => {
+  _onChange = (value) => {
     this.setState({value})
     this.props.onChange && this.props.onChange(value && this.options[value.value])
-  };
+  }
+
+  _saveRef = (select) => {
+    this.select = select
+  }
 
   render () {
     return (
@@ -79,10 +89,11 @@ class Geocoder extends PureComponent {
         autoload={false}
         cacheAsyncResults={false}
         filterOptions={false}
-        loadOptions={this.throttleLoadOptions(this.loadOptions)}
+        loadOptions={this._throttledLoadOptions}
         minimumInput={3}
         {...this.props}
-        onChange={this.onChange}
+        onChange={this._onChange}
+        ref={this._saveRef}
         value={this.state.value}
         />
     )
