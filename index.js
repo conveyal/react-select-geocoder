@@ -29,12 +29,14 @@ class Geocoder extends PureComponent {
     value: this.props.value || null
   }
 
-  _throttledLoadOptions = throttle(this.loadOptions, this.props.rateLimit || 500)
-
   cacheOptions (options) {
     options.forEach((o) => {
       this.options[o.value] = o.feature
     })
+  }
+
+  componentWillMount () {
+    this._throttledLoadOptions = throttle(this.loadOptions, this.props.rateLimit || 500)
   }
 
   componentWillReceiveProps (nextProps) {
