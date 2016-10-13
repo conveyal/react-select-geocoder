@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/conveyal/react-select-geocoder",
   "devDependencies": {
-    "mastarm": "^0.10.0",
+    "mastarm": "^1.1.2",
     "semantic-release": "^4.3.5"
   },
   "dependencies": {
