@@ -1,8 +1,8 @@
 import {search as mapzenSearch} from 'isomorphic-mapzen-search'
+import throttle from 'lodash.throttle'
 import React, {PropTypes} from 'react'
 import {PureComponent, shallowEqual} from 'react-pure-render'
 import Select from 'react-select'
-import throttle from 'throttleit'
 
 class Geocoder extends PureComponent {
   static propTypes = {
@@ -10,7 +10,7 @@ class Geocoder extends PureComponent {
     boundary: PropTypes.object,
     featureToLabel: PropTypes.func,
     featureToValue: PropTypes.func,
-    focusLatlng: PropTypes.any,
+    focusPoint: PropTypes.any,
     onChange: PropTypes.func,
     rateLimit: PropTypes.number,
     search: PropTypes.func,
@@ -63,10 +63,12 @@ class Geocoder extends PureComponent {
   }
 
   loadOptions = (input) => {
-    const {apiKey, focusLatlng, boundary, search} = this.props
-    return search(apiKey, input, {
+    const {apiKey, boundary, focusPoint, search} = this.props
+    return search({
+      apiKey,
       boundary,
-      focusLatlng
+      focusPoint,
+      text: input
     }).then((geojson) => {
       const options = geojson && geojson.features
         ? geojson.features.map(this.featureToOption)

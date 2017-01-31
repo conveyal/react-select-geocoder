@@ -7,7 +7,7 @@
     "npm": ">=3"
   },
   "scripts": {
-    "prepublish": "mastarm prepublish index.js",
+    "prepublish": "mastarm prepublish index.js:build/index.js",
     "test": "mastarm lint",
     "start": "mastarm build --serve example.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -28,18 +28,18 @@
   },
   "homepage": "https://github.com/conveyal/react-select-geocoder",
   "devDependencies": {
-    "mastarm": "^0.10.0",
-    "semantic-release": "^4.3.5"
+    "mastarm": "^3.3.0",
+    "semantic-release": "^6.3.2"
   },
   "dependencies": {
-    "isomorphic-mapzen-search": "^0.0.4",
+    "isomorphic-mapzen-search": "^1.0.0",
+    "lodash.throttle": "^4.1.1",
     "react-pure-render": "^1.0.2",
-    "react-select": "^1.0.0-rc.1",
-    "throttleit": "^1.0.0"
+    "react-select": "^1.0.0-rc.3"
   },
   "peerDependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "standard": {
     "parser": "babel-eslint"
