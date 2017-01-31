@@ -3,8 +3,6 @@ import {render} from 'react-dom'
 
 import Geocoder from './index'
 
-import './node_modules/react-select/dist/react-select.css'
-
 const div = document.createElement('div')
 document.body.appendChild(div)
 
