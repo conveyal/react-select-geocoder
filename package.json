@@ -32,7 +32,7 @@
     "semantic-release": "^4.3.5"
   },
   "dependencies": {
-    "isomorphic-mapzen-search": "^0.0.4",
+    "isomorphic-mapzen-search": "^0.1.0",
     "react-pure-render": "^1.0.2",
     "react-select": "^1.0.0-rc.1",
     "throttleit": "^1.0.0"
