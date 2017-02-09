@@ -1,3 +1,4 @@
+import Icon from '@conveyal/woonerf/components/icon'
 import {search as mapzenSearch} from 'isomorphic-mapzen-search'
 import throttle from 'lodash.throttle'
 import React, {PropTypes} from 'react'
@@ -26,9 +27,9 @@ class Geocoder extends PureComponent {
   options = {}
 
   state = {
-    value: this.props.value || null
+    value: this.props.value || null,
+    position: null
   }
-
   cacheOptions (options) {
     options.forEach((o) => {
       this.options[o.value] = o.feature
@@ -61,7 +62,9 @@ class Geocoder extends PureComponent {
   focus () {
     this.select.focus()
   }
+  renderGeolocateOption (option) {
 
+  }
   loadOptions = (input) => {
     const {apiKey, boundary, focusPoint, search} = this.props
     return search({
@@ -73,14 +76,47 @@ class Geocoder extends PureComponent {
       const options = geojson && geojson.features
         ? geojson.features.map(this.featureToOption)
         : []
+      // insert geolocate option if geolocate is enabled
+      if (this.props.geolocate && 'geolocation' in navigator && input === '') {
+        // TODO: handle option rendering in renderGeolocateOption with <Icon type={option.icon} />
+        options.push({
+          icon: 'location-arrow',
+          label: 'Use my location',
+          value: 'TBD',
+          geolocate: true,
+          feature: {
+            properties: {label: 'test'},
+            geometry: {
+              coordinates: [0, 0]
+            }
+          }
+        })
+      } else {
+        /* geolocation IS NOT available, do nothing */
+      }
       this.cacheOptions(options)
       return {options}
     })
   }
 
   _onChange = (value) => {
-    this.setState({value})
-    this.props.onChange && this.props.onChange(value && this.options[value.value])
+    if (value && value.geolocate) {
+      value.label = 'Finding your location...'
+      this.setState({value})
+      navigator.geolocation.getCurrentPosition((position) => {
+        const result = {
+          icon: 'location-arrow',
+          label: `My location (${position.coords.longitude.toFixed(5)}, ${position.coords.latitude.toFixed(5)})`,
+          value: `${position.coords.longitude},${position.coords.latitude}`,
+          geolocate: true
+        }
+        this.setState({value: result})
+        this.props.onChange && this.props.onChange(value && this.options[value.value])
+      })
+    } else {
+      this.setState({value})
+      this.props.onChange && this.props.onChange(value && this.options[value.value])
+    }
   }
 
   _saveRef = (select) => {
@@ -90,7 +126,7 @@ class Geocoder extends PureComponent {
   render () {
     return (
       <Select.Async
-        autoload={false}
+        autoload
         cacheAsyncResults={false}
         filterOptions={false}
         loadOptions={this._throttledLoadOptions}
