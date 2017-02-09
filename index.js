@@ -1,4 +1,4 @@
-import Icon from '@conveyal/woonerf/components/icon'
+// import Icon from '@conveyal/woonerf/components/icon'
 import {search as mapzenSearch} from 'isomorphic-mapzen-search'
 import throttle from 'lodash.throttle'
 import React, {PropTypes} from 'react'
