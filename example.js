@@ -20,6 +20,7 @@ render(
       return label
     }}
     onChange={(value) => console.log(value)}
+    geolocate
     />,
   div
 )
