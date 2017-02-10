@@ -11,17 +11,22 @@ class Geocoder extends PureComponent {
     boundary: PropTypes.object,
     featureToLabel: PropTypes.func,
     featureToValue: PropTypes.func,
+    findingLocationText: PropTypes.string,
     focusPoint: PropTypes.any,
+    geocode: PropTypes.bool,
     onChange: PropTypes.func,
     rateLimit: PropTypes.number,
     search: PropTypes.func,
+    useLocationText: PropTypes.string,
     value: PropTypes.object
   }
 
   static defaultProps = {
     featureToLabel: (feature) => feature.properties.label,
     featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`,
-    search: mapzenSearch
+    findingLocationText: 'Finding your location...',
+    search: mapzenSearch,
+    useLocationText: 'Use my location'
   }
 
   options = {}
@@ -62,9 +67,7 @@ class Geocoder extends PureComponent {
   focus () {
     this.select.focus()
   }
-  renderGeolocateOption (option) {
 
-  }
   loadOptions = (input) => {
     const {apiKey, boundary, focusPoint, search} = this.props
     return search({
@@ -81,7 +84,7 @@ class Geocoder extends PureComponent {
         // TODO: handle option rendering in renderGeolocateOption with <Icon type={option.icon} />
         options.push({
           icon: 'location-arrow',
-          label: 'Use my location',
+          label: this.props.useLocationText,
           value: 'TBD',
           geolocate: true,
           feature: {
@@ -101,7 +104,7 @@ class Geocoder extends PureComponent {
 
   _onChange = (value) => {
     if (value && value.geolocate) {
-      value.label = 'Finding your location...'
+      value.label = this.props.findingLocationText
       this.setState({value})
       navigator.geolocation.getCurrentPosition((position) => {
         const result = {
