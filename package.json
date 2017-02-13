@@ -8,6 +8,7 @@
   },
   "scripts": {
     "prepublish": "mastarm prepublish index.js:build/index.js",
+    "prestart": "yarn",
     "test": "mastarm lint",
     "start": "mastarm build --serve example.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
