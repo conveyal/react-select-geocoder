@@ -8,6 +8,7 @@
   },
   "scripts": {
     "prepublish": "mastarm prepublish index.js:build/index.js",
+    "prestart": "yarn",
     "test": "mastarm lint",
     "start": "mastarm build --serve example.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -32,6 +33,7 @@
     "semantic-release": "^6.3.2"
   },
   "dependencies": {
+    "@conveyal/woonerf": "^2.0.1",
     "isomorphic-mapzen-search": "^1.0.0",
     "lodash.throttle": "^4.1.1",
     "react-pure-render": "^1.0.2",
