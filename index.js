@@ -126,8 +126,26 @@ class Geocoder extends Component {
           })
           onChange && onChange(value)
         }).catch((err) => {
-          console.log('Error during reverse lookup of ', position)
+          console.error('Error during reverse lookup of', position)
           console.error(err)
+          const value = this.featureToOption({
+            type: 'Feature',
+            properties: {
+              label: `${position.longitude}, ${position.latitude}`
+            },
+            geometry: {
+              type: 'Point',
+              coordinates: [
+                position.longitude,
+                position.latitude
+              ]
+            }
+          })
+          this.setState({
+            ...this.state,
+            value
+          })
+          onChange && onChange(value)
         })
       })
     } else {
@@ -147,7 +165,6 @@ class Geocoder extends Component {
     this.select = select
   }
 
-  renderCount = 0
   render () {
     return (
       <Select.Async
