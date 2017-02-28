@@ -6,6 +6,8 @@ notifications:
   email: false
 node_js:
   - '6'
+before_install:
+  - yarn add -g codecov
 script:
   - yarn run lint
   - yarn run cover
