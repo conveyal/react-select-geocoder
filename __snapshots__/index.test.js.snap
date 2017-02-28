@@ -1,0 +1,169 @@
+exports[`Geocoder should render 1`] = `
+<Geocoder
+  apiKey="test"
+  featureToLabel={[Function]}
+  featureToValue={[Function]}
+  findingLocationText="Locating you..."
+  reverseSearch={[Function]}
+  search={[Function]}
+  useLocationText="Use Current Location">
+  <Async
+    apiKey="test"
+    autoBlur={true}
+    autoload={false}
+    cache={false}
+    featureToLabel={[Function]}
+    featureToValue={[Function]}
+    filterOptions={false}
+    findingLocationText="Locating you..."
+    ignoreAccents={false}
+    ignoreCase={false}
+    loadOptions={[Function]}
+    loadingPlaceholder="Loading..."
+    minimumInput={3}
+    onChange={[Function]}
+    options={Array []}
+    reverseSearch={[Function]}
+    search={[Function]}
+    searchPromptText="Type to search"
+    useLocationText="Use Current Location"
+    value={null}>
+    <Select
+      addLabelText="Add \"{label}\"?"
+      apiKey="test"
+      arrowRenderer={[Function]}
+      autoBlur={true}
+      autoload={false}
+      autosize={true}
+      backspaceRemoves={true}
+      backspaceToRemoveMessage="Press backspace to remove {label}"
+      cache={false}
+      clearAllText="Clear all"
+      clearRenderer={[Function]}
+      clearValueText="Clear value"
+      clearable={true}
+      deleteRemoves={true}
+      delimiter=","
+      disabled={false}
+      escapeClearsValue={true}
+      featureToLabel={[Function]}
+      featureToValue={[Function]}
+      filterOptions={false}
+      findingLocationText="Locating you..."
+      ignoreAccents={false}
+      ignoreCase={false}
+      inputProps={Object {}}
+      isLoading={false}
+      joinValues={false}
+      labelKey="label"
+      loadOptions={[Function]}
+      loadingPlaceholder="Loading..."
+      matchPos="any"
+      matchProp="any"
+      menuBuffer={0}
+      menuRenderer={[Function]}
+      minimumInput={3}
+      multi={false}
+      noResultsText="Type to search"
+      onBlurResetsInput={true}
+      onChange={[Function]}
+      onCloseResetsInput={true}
+      onInputChange={[Function]}
+      openAfterFocus={false}
+      optionComponent={[Function]}
+      options={Array []}
+      pageSize={5}
+      placeholder="Select..."
+      required={false}
+      reverseSearch={[Function]}
+      scrollMenuIntoView={true}
+      search={[Function]}
+      searchPromptText="Type to search"
+      searchable={true}
+      simpleValue={false}
+      tabSelectsValue={true}
+      useLocationText="Use Current Location"
+      value={null}
+      valueComponent={[Function]}
+      valueKey="value">
+      <div
+        className="Select Select--single is-searchable">
+        <div
+          className="Select-control"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}>
+          <span
+            className="Select-multi-value-wrapper"
+            id="react-select-2--value">
+            <div
+              className="Select-placeholder">
+              Select...
+            </div>
+            <AutosizeInput
+              aria-activedescendant="react-select-2--value"
+              aria-expanded="false"
+              aria-haspopup="false"
+              aria-owns=""
+              className="Select-input"
+              minWidth="5"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={false}
+              role="combobox"
+              value="">
+              <div
+                className="Select-input"
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }>
+                <input
+                  aria-activedescendant="react-select-2--value"
+                  aria-expanded="false"
+                  aria-haspopup="false"
+                  aria-owns=""
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  role="combobox"
+                  style={
+                    Object {
+                      "boxSizing": "content-box",
+                      "width": "5px",
+                    }
+                  }
+                  value="" />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  } />
+              </div>
+            </AutosizeInput>
+          </span>
+          <span
+            className="Select-arrow-zone"
+            onMouseDown={[Function]}>
+            <span
+              className="Select-arrow"
+              onMouseDown={[Function]} />
+          </span>
+        </div>
+      </div>
+    </Select>
+  </Async>
+</Geocoder>
+`;

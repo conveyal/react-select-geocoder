@@ -6,6 +6,10 @@ notifications:
   email: false
 node_js:
   - '6'
+script:
+  - yarn run lint
+  - yarn run cover
+  - codecov
 after_success:
   - yarn run semantic-release
 branches:

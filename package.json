@@ -7,11 +7,13 @@
     "npm": ">=3"
   },
   "scripts": {
+    "cover": "mastarm test --coverage --coverage-paths index.js",
+    "lint": "mastarm lint",
     "prepublish": "mastarm prepublish index.js:build/index.js",
     "prestart": "yarn",
-    "test": "mastarm lint",
     "start": "mastarm build --serve example.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "yarn run lint && mastarm test"
   },
   "repository": {
     "type": "git",
@@ -29,11 +31,15 @@
   },
   "homepage": "https://github.com/conveyal/react-select-geocoder",
   "devDependencies": {
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.5.0",
     "mastarm": "^3.3.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "semantic-release": "^6.3.2"
   },
   "dependencies": {
-    "@conveyal/woonerf": "^2.0.1",
     "isomorphic-mapzen-search": "^1.0.0",
     "lodash.throttle": "^4.1.1",
     "react-pure-render": "^1.0.2",
