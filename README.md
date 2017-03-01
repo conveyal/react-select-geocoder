@@ -7,10 +7,11 @@ Geocoder that uses react-select
 
 ## Usage
 
-Check the `propTypes` for the options. For `boundary` see [isomorphic-mapzen-search](https://github.com/conveyal/isomorphic-mapzen-search#searchapikey-text-options) and for `focusPoint` use any [lonlat](https://github.com/conveyal/lonlat) compatible value.
+Check the `propTypes` for the options. For `boundary` see [isomorphic-mapzen-search](https://github.com/conveyal/isomorphic-mapzen-search#autocomplete) and for `focusPoint` use any [lonlat](https://github.com/conveyal/lonlat) compatible value.
 
 ```js
 import Geocoder from 'react-select-geocoder'
+
 render(
   <Geocoder
     apiKey={process.env.MAPZEN_KEY}

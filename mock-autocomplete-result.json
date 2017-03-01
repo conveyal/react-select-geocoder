@@ -1,0 +1,412 @@
+{
+  "geocoding": {
+    "version": "0.2",
+    "attribution": "https://search.mapzen.com/v1/attribution",
+    "query": {
+      "text": "123 ma",
+      "parsed_text": {
+        "state": "MA",
+        "regions": [
+          "123"
+        ]
+      },
+      "tokens": [
+        "123",
+        "ma"
+      ],
+      "size": 10,
+      "sources": [
+        "geonames",
+        "openaddresses",
+        "openstreetmap",
+        "whosonfirst"
+      ],
+      "private": false
+    },
+    "engine": {
+      "name": "Pelias",
+      "author": "Mapzen",
+      "version": "1.0"
+    },
+    "timestamp": 1488349061580
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.282034,
+          41.944554
+        ]
+      },
+      "properties": {
+        "id": "polyline:22295103",
+        "gid": "openstreetmap:street:polyline:22295103",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:22295103",
+        "name": "MA 123 East",
+        "street": "MA 123 East",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Bristol County",
+        "county_gid": "whosonfirst:county:102084407",
+        "localadmin": "Attleboro",
+        "localadmin_gid": "whosonfirst:localadmin:404476165",
+        "locality": "Attleboro",
+        "locality_gid": "whosonfirst:locality:85950363",
+        "neighbourhood": "Dodgeville",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85814695",
+        "label": "MA 123 East, Attleboro, MA, USA"
+      },
+      "bbox": [
+        -71.282723,
+        41.944301,
+        -71.28138,
+        41.94474
+      ]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.907256,
+          42.130874
+        ]
+      },
+      "properties": {
+        "id": "polyline:20589865",
+        "gid": "openstreetmap:street:polyline:20589865",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:20589865",
+        "name": "MA 123 East",
+        "street": "MA 123 East",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Plymouth County",
+        "county_gid": "whosonfirst:county:102084367",
+        "localadmin": "Rockland",
+        "localadmin_gid": "whosonfirst:localadmin:404476051",
+        "neighbourhood": "Hatherly",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85824227",
+        "label": "MA 123 East, Rockland, MA, USA"
+      },
+      "bbox": [
+        -70.907303,
+        42.130676,
+        -70.907105,
+        42.131042
+      ]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083413,
+          42.049492
+        ]
+      },
+      "properties": {
+        "id": "polyline:22186579",
+        "gid": "openstreetmap:street:polyline:22186579",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:22186579",
+        "name": "MA 123 East",
+        "street": "MA 123 East",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Bristol County",
+        "county_gid": "whosonfirst:county:102084407",
+        "localadmin": "Easton",
+        "localadmin_gid": "whosonfirst:localadmin:404475929",
+        "label": "MA 123 East, Easton, MA, USA"
+      },
+      "bbox": [
+        -71.083428,
+        42.049175,
+        -71.083245,
+        42.049789
+      ]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.142014,
+          42.023472
+        ]
+      },
+      "properties": {
+        "id": "polyline:22186590",
+        "gid": "openstreetmap:street:polyline:22186590",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:22186590",
+        "name": "MA 123 West",
+        "street": "MA 123 West",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Bristol County",
+        "county_gid": "whosonfirst:county:102084407",
+        "localadmin": "Easton",
+        "localadmin_gid": "whosonfirst:localadmin:404475929",
+        "label": "MA 123 West, Easton, MA, USA"
+      },
+      "bbox": [
+        -71.142022,
+        42.023422,
+        -71.142006,
+        42.023521
+      ]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.020203,
+          42.081029
+        ]
+      },
+      "properties": {
+        "id": "polyline:20592530",
+        "gid": "openstreetmap:street:polyline:20592530",
+        "layer": "street",
+        "source": "openstreetmap",
+        "source_id": "polyline:20592530",
+        "name": "MA 123 East",
+        "street": "MA 123 East",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Plymouth County",
+        "county_gid": "whosonfirst:county:102084367",
+        "localadmin": "Brockton",
+        "localadmin_gid": "whosonfirst:localadmin:404476503",
+        "locality": "Brockton",
+        "locality_gid": "whosonfirst:locality:85950319",
+        "neighbourhood": "Clifton Heights",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85811415",
+        "label": "MA 123 East, Brockton, MA, USA"
+      },
+      "bbox": [
+        -71.020226,
+        42.08076,
+        -71.02018,
+        42.081298
+      ]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.137634,
+          42.651756
+        ]
+      },
+      "properties": {
+        "id": "us/ma/statewide:e1b581faad1c23ca",
+        "gid": "openaddresses:address:us/ma/statewide:e1b581faad1c23ca",
+        "layer": "address",
+        "source": "openaddresses",
+        "source_id": "us/ma/statewide:e1b581faad1c23ca",
+        "name": "123 Main Street",
+        "housenumber": "123",
+        "street": "Main Street",
+        "postalcode": "01810",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Essex County",
+        "county_gid": "whosonfirst:county:102084463",
+        "localadmin": "Andover",
+        "localadmin_gid": "whosonfirst:localadmin:404476285",
+        "locality": "Andover",
+        "locality_gid": "whosonfirst:locality:85950785",
+        "label": "123 Main Street, Andover, MA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.127771,
+          41.683886
+        ]
+      },
+      "properties": {
+        "id": "us/ma/statewide:3bc16331198845c0",
+        "gid": "openaddresses:address:us/ma/statewide:3bc16331198845c0",
+        "layer": "address",
+        "source": "openaddresses",
+        "source_id": "us/ma/statewide:3bc16331198845c0",
+        "name": "123 Marchand Street",
+        "housenumber": "123",
+        "street": "Marchand Street",
+        "postalcode": "02723",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Bristol County",
+        "county_gid": "whosonfirst:county:102084407",
+        "localadmin": "Fall River",
+        "localadmin_gid": "whosonfirst:localadmin:404476177",
+        "locality": "Fall River",
+        "locality_gid": "whosonfirst:locality:85950371",
+        "label": "123 Marchand Street, Fall River, MA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.419925,
+          42.429663
+        ]
+      },
+      "properties": {
+        "id": "us/ma/statewide:cd893af89ead780d",
+        "gid": "openaddresses:address:us/ma/statewide:cd893af89ead780d",
+        "layer": "address",
+        "source": "openaddresses",
+        "source_id": "us/ma/statewide:cd893af89ead780d",
+        "name": "123 Maynard Farm Road",
+        "housenumber": "123",
+        "street": "Maynard Farm Road",
+        "postalcode": "01776",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Middlesex County",
+        "county_gid": "whosonfirst:county:102084643",
+        "localadmin": "Sudbury",
+        "localadmin_gid": "whosonfirst:localadmin:404476449",
+        "label": "123 Maynard Farm Road, Sudbury, MA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.929022,
+          42.864791
+        ]
+      },
+      "properties": {
+        "id": "us/ma/statewide:44f0269c2a51d09c",
+        "gid": "openaddresses:address:us/ma/statewide:44f0269c2a51d09c",
+        "layer": "address",
+        "source": "openaddresses",
+        "source_id": "us/ma/statewide:44f0269c2a51d09c",
+        "name": "123 Market Street",
+        "housenumber": "123",
+        "street": "Market Street",
+        "postalcode": "01913",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Essex County",
+        "county_gid": "whosonfirst:county:102084463",
+        "localadmin": "Amesbury Town",
+        "localadmin_gid": "whosonfirst:localadmin:404476283",
+        "locality": "Amesbury Town",
+        "locality_gid": "whosonfirst:locality:85950401",
+        "label": "123 Market Street, Amesbury Town, MA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.186801,
+          42.367549
+        ]
+      },
+      "properties": {
+        "id": "us/ma/statewide:91fee70142ca8d68",
+        "gid": "openaddresses:address:us/ma/statewide:91fee70142ca8d68",
+        "layer": "address",
+        "source": "openaddresses",
+        "source_id": "us/ma/statewide:91fee70142ca8d68",
+        "name": "123 Main Street",
+        "housenumber": "123",
+        "street": "Main Street",
+        "postalcode": "02472",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Massachusetts",
+        "region_gid": "whosonfirst:region:85688645",
+        "region_a": "MA",
+        "county": "Middlesex County",
+        "county_gid": "whosonfirst:county:102084643",
+        "localadmin": "Watertown Town",
+        "localadmin_gid": "whosonfirst:localadmin:404476459",
+        "locality": "Watertown Town",
+        "locality_gid": "whosonfirst:locality:85950335",
+        "neighbourhood": "Brigham",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85891543",
+        "label": "123 Main Street, Watertown Town, MA, USA"
+      }
+    }
+  ],
+  "bbox": [
+    -71.419925,
+    41.683886,
+    -70.907105,
+    42.864791
+  ]
+}

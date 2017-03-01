@@ -1,4 +1,5 @@
-import {search as mapzenSearch, reverse as reverseSearch} from 'isomorphic-mapzen-search'
+import stableStringify from 'json-stable-stringify'
+import {autocomplete as mapzenAutocomplete, reverse as reverseSearch} from 'isomorphic-mapzen-search'
 import throttle from 'lodash.throttle'
 import React, {Component, PropTypes} from 'react'
 import {shallowEqual} from 'react-pure-render'
@@ -29,9 +30,11 @@ class Geocoder extends Component {
     featureToValue: (feature) => `${feature.properties.label}-${feature.geometry.coordinates.join(',')}`,
     findingLocationText: 'Locating you...',
     reverseSearch,
-    search: mapzenSearch,
+    search: mapzenAutocomplete,
     useLocationText: 'Use Current Location'
   }
+
+  autocompleteCache = {}
 
   options = {}
 
@@ -88,16 +91,26 @@ class Geocoder extends Component {
         })
       }
     } else {
-      search({
+      const autocompleteQuery = {
         apiKey,
         boundary,
         focusPoint,
         text: input
-      }).then((geojson) => {
+      }
+      const autocompleteQueryKey = stableStringify(autocompleteQuery)
+
+      // check if autocomplete query has been made before
+      const cacheValue = this.autocompleteCache[autocompleteQueryKey]
+      if (cacheValue) {
+        return callback(null, cacheValue)
+      }
+
+      search(autocompleteQuery).then((geojson) => {
         const options = geojson && geojson.features
           ? geojson.features.map(this.featureToOption)
           : []
         this.cacheOptions(options)
+        this.autocompleteCache[autocompleteQueryKey] = {options}
         callback(null, {options})
       }).catch((error) => {
         callback(error)

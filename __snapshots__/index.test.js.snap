@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Geocoder should render 1`] = `
 <Geocoder
   apiKey="test"
@@ -6,7 +8,8 @@ exports[`Geocoder should render 1`] = `
   findingLocationText="Locating you..."
   reverseSearch={[Function]}
   search={[Function]}
-  useLocationText="Use Current Location">
+  useLocationText="Use Current Location"
+>
   <Async
     apiKey="test"
     autoBlur={true}
@@ -27,9 +30,10 @@ exports[`Geocoder should render 1`] = `
     search={[Function]}
     searchPromptText="Type to search"
     useLocationText="Use Current Location"
-    value={null}>
+    value={null}
+  >
     <Select
-      addLabelText="Add \"{label}\"?"
+      addLabelText="Add \\"{label}\\"?"
       apiKey="test"
       arrowRenderer={[Function]}
       autoBlur={true}
@@ -85,21 +89,26 @@ exports[`Geocoder should render 1`] = `
       useLocationText="Use Current Location"
       value={null}
       valueComponent={[Function]}
-      valueKey="value">
+      valueKey="value"
+    >
       <div
-        className="Select Select--single is-searchable">
+        className="Select Select--single is-searchable"
+      >
         <div
           className="Select-control"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
-          onTouchStart={[Function]}>
+          onTouchStart={[Function]}
+        >
           <span
             className="Select-multi-value-wrapper"
-            id="react-select-2--value">
+            id="react-select-2--value"
+          >
             <div
-              className="Select-placeholder">
+              className="Select-placeholder"
+            >
               Select...
             </div>
             <AutosizeInput
@@ -114,14 +123,16 @@ exports[`Geocoder should render 1`] = `
               onFocus={[Function]}
               required={false}
               role="combobox"
-              value="">
+              value=""
+            >
               <div
                 className="Select-input"
                 style={
                   Object {
                     "display": "inline-block",
                   }
-                }>
+                }
+              >
                 <input
                   aria-activedescendant="react-select-2--value"
                   aria-expanded="false"
@@ -138,7 +149,8 @@ exports[`Geocoder should render 1`] = `
                       "width": "5px",
                     }
                   }
-                  value="" />
+                  value=""
+                />
                 <div
                   style={
                     Object {
@@ -150,16 +162,19 @@ exports[`Geocoder should render 1`] = `
                       "visibility": "hidden",
                       "whiteSpace": "pre",
                     }
-                  } />
+                  }
+                />
               </div>
             </AutosizeInput>
           </span>
           <span
             className="Select-arrow-zone"
-            onMouseDown={[Function]}>
+            onMouseDown={[Function]}
+          >
             <span
               className="Select-arrow"
-              onMouseDown={[Function]} />
+              onMouseDown={[Function]}
+            />
           </span>
         </div>
       </div>

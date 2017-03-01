@@ -33,14 +33,16 @@
   "devDependencies": {
     "enzyme": "^2.7.1",
     "enzyme-to-json": "^1.5.0",
-    "mastarm": "^3.3.0",
+    "mastarm": "^3.5.0",
+    "nock": "^9.0.9",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "semantic-release": "^6.3.2"
   },
   "dependencies": {
-    "isomorphic-mapzen-search": "^1.0.0",
+    "isomorphic-mapzen-search": "^1.2.0",
+    "json-stable-stringify": "^1.0.1",
     "lodash.throttle": "^4.1.1",
     "react-pure-render": "^1.0.2",
     "react-select": "^1.0.0-rc.3"
