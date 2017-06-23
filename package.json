@@ -37,6 +37,7 @@
     "nock": "^9.0.13",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
     "semantic-release": "^6.3.6"
   },
   "dependencies": {
