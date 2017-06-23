@@ -3,12 +3,12 @@ import {autocomplete as mapzenAutocomplete, reverse as reverseSearch} from 'isom
 import isEqual from 'lodash/isEqual'
 import throttle from 'lodash/throttle'
 import PropTypes from 'prop-types'
-import React, {PureComponent} from 'react'
+import React, {Component} from 'react'
 import Select from 'react-select'
 
 const GEOLOCATE_VALUE = 'geolocate'
 
-class Geocoder extends PureComponent {
+class Geocoder extends Component {
   static propTypes = {
     apiKey: PropTypes.string.isRequired,
     boundary: PropTypes.object,
