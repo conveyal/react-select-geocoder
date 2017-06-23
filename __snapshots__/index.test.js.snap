@@ -73,7 +73,6 @@ exports[`Geocoder should render 1`] = `
       onChange={[Function]}
       onCloseResetsInput={true}
       onInputChange={[Function]}
-      openAfterFocus={false}
       optionComponent={[Function]}
       options={Array []}
       pageSize={5}
@@ -92,7 +91,7 @@ exports[`Geocoder should render 1`] = `
       valueKey="value"
     >
       <div
-        className="Select Select--single is-searchable"
+        className="Select Select--single is-clearable is-searchable"
       >
         <div
           className="Select-control"
@@ -111,7 +110,7 @@ exports[`Geocoder should render 1`] = `
             >
               Select...
             </div>
-            <AutosizeInput
+            <Component
               aria-activedescendant="react-select-2--value"
               aria-expanded="false"
               aria-haspopup="false"
@@ -165,7 +164,7 @@ exports[`Geocoder should render 1`] = `
                   }
                 />
               </div>
-            </AutosizeInput>
+            </Component>
           </span>
           <span
             className="Select-arrow-zone"

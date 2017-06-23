@@ -1,13 +1,14 @@
 import stableStringify from 'json-stable-stringify'
 import {autocomplete as mapzenAutocomplete, reverse as reverseSearch} from 'isomorphic-mapzen-search'
-import throttle from 'lodash.throttle'
-import React, {Component, PropTypes} from 'react'
-import {shallowEqual} from 'react-pure-render'
+import isEqual from 'lodash/isEqual'
+import throttle from 'lodash/throttle'
+import PropTypes from 'prop-types'
+import React, {PureComponent} from 'react'
 import Select from 'react-select'
 
 const GEOLOCATE_VALUE = 'geolocate'
 
-class Geocoder extends Component {
+class Geocoder extends PureComponent {
   static propTypes = {
     apiKey: PropTypes.string.isRequired,
     boundary: PropTypes.object,
@@ -15,7 +16,7 @@ class Geocoder extends Component {
     featureToValue: PropTypes.func,
     findingLocationText: PropTypes.string,
     focusPoint: PropTypes.any,
-    geocode: PropTypes.bool,
+    geolocate: PropTypes.bool,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
     rateLimit: PropTypes.number,
@@ -54,7 +55,7 @@ class Geocoder extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (!shallowEqual(nextProps.value, this.props.value)) {
+    if (!isEqual(nextProps.value, this.props.value)) {
       this.setState({value: nextProps.value})
     }
 

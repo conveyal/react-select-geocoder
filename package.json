@@ -13,7 +13,7 @@
     "prestart": "yarn",
     "start": "mastarm build --serve example.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "yarn run lint && mastarm test"
+    "test": "mastarm lint && mastarm test"
   },
   "repository": {
     "type": "git",
@@ -31,25 +31,24 @@
   },
   "homepage": "https://github.com/conveyal/react-select-geocoder",
   "devDependencies": {
-    "enzyme": "^2.7.1",
-    "enzyme-to-json": "^1.5.0",
-    "mastarm": "^3.5.0",
-    "nock": "^9.0.9",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "semantic-release": "^6.3.2"
+    "enzyme": "^2.9.0",
+    "enzyme-to-json": "^1.5.1",
+    "mastarm": "^3.11.0",
+    "nock": "^9.0.13",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "semantic-release": "^6.3.6"
   },
   "dependencies": {
-    "isomorphic-mapzen-search": "^1.2.0",
+    "isomorphic-mapzen-search": "^1.3.0",
     "json-stable-stringify": "^1.0.1",
-    "lodash.throttle": "^4.1.1",
-    "react-pure-render": "^1.0.2",
-    "react-select": "^1.0.0-rc.3"
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react-select": "^1.0.0-rc.5"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "standard": {
     "parser": "babel-eslint"
