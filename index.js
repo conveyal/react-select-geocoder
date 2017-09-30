@@ -90,6 +90,8 @@ class Geocoder extends Component {
         callback(null, {
           options: this.defaultOptions()
         })
+      } else {
+        callback(null);
       }
     } else {
       const autocompleteQuery = {
@@ -195,6 +197,7 @@ class Geocoder extends Component {
         onChange={this._onChange}
         ref={this._saveRef}
         value={this.state.value}
+        onBlurResetsInput={false}
         />
     )
   }
