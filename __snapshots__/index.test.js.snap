@@ -24,6 +24,7 @@ exports[`Geocoder should render 1`] = `
     loadOptions={[Function]}
     loadingPlaceholder="Loading..."
     minimumInput={3}
+    onBlurResetsInput={false}
     onChange={[Function]}
     options={Array []}
     reverseSearch={[Function]}
@@ -46,6 +47,7 @@ exports[`Geocoder should render 1`] = `
       clearRenderer={[Function]}
       clearValueText="Clear value"
       clearable={true}
+      closeOnSelect={true}
       deleteRemoves={true}
       delimiter=","
       disabled={false}
@@ -69,10 +71,12 @@ exports[`Geocoder should render 1`] = `
       minimumInput={3}
       multi={false}
       noResultsText="Type to search"
-      onBlurResetsInput={true}
+      onBlurResetsInput={false}
       onChange={[Function]}
       onCloseResetsInput={true}
       onInputChange={[Function]}
+      onSelectResetsInput={true}
+      openOnClick={true}
       optionComponent={[Function]}
       options={Array []}
       pageSize={5}
@@ -110,7 +114,7 @@ exports[`Geocoder should render 1`] = `
             >
               Select...
             </div>
-            <Component
+            <AutosizeInput
               aria-activedescendant="react-select-2--value"
               aria-expanded="false"
               aria-haspopup="false"
@@ -132,6 +136,13 @@ exports[`Geocoder should render 1`] = `
                   }
                 }
               >
+                <style
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "input#undefined::-ms-clear {display: none;}",
+                    }
+                  }
+                />
                 <input
                   aria-activedescendant="react-select-2--value"
                   aria-expanded="false"
@@ -164,7 +175,7 @@ exports[`Geocoder should render 1`] = `
                   }
                 />
               </div>
-            </Component>
+            </AutosizeInput>
           </span>
           <span
             className="Select-arrow-zone"

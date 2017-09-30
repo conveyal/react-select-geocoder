@@ -91,7 +91,7 @@ class Geocoder extends Component {
           options: this.defaultOptions()
         })
       } else {
-        callback(null);
+        callback(null)
       }
     } else {
       const autocompleteQuery = {
